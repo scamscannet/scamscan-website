@@ -12,20 +12,24 @@
     "prisma:migrate": "prisma migrate deploy"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.2.32",
     "@prisma/client": "^4.14.0",
     "@types/node": "20.1.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "bcrypt": "^5.1.0",
     "i18next": "^22.4.15",
+    "negotiator": "^0.6.3",
     "next": "13.4.1",
     "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
+    "@types/negotiator": "^0.6.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
