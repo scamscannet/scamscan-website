@@ -1,0 +1,28 @@
+{
+    "server-component": {
+      "welcome": "Willkommen"
+    },
+    "counter": {
+      "increment": "Zuwachs",
+      "decrement": "Dekrementieren"
+    },
+    "blacklist":{
+      "checkDomain": "Überprüfe Domain",
+      "infoBoxTitle": "Über die ScamScan Domain Blacklist",
+      "infoBoxText": "Bla langer Text"
+    },
+    "navbar":{
+      "home": "Home",
+      "tools": "Tools",	
+      "about": "About",
+      "contact": "Contact",
+      "account": "Account",
+      "login": "Einloggen",
+      "logout": "Ausloggen",
+      "pricing": "Preise"
+    },
+    "tools":{
+      "title": "Werkzeuge",
+      "subtitle": "We offer a variety of tools to protect you from fraud."
+    }
+  }
