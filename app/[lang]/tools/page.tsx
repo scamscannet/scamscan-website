@@ -1,5 +1,4 @@
 import { getDictionary } from "@/get-dictionary";
-import en from "../../../dictionaries/en.json";
 import { Locale } from "@/i18n-config";
 
 export default async function Tools({

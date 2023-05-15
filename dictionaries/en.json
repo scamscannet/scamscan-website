@@ -24,5 +24,22 @@
     "tools":{
       "title": "Tools",
       "subtitle": "We offer a variety of tools to protect you from fraud."
+    },
+    "login":{
+      "signIn": "Sign in",
+      "infoText": "Use your email and password to sign in"
+    },
+    "register":{
+      "signUp": "Sign up",
+      "infoText": "Use your email and password to sign up"
+    },
+    "formLogin": {
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "alreadyAccount": "Already have an account?",
+      "registerForFree": "Register for free!",
+      "signInInstead": "Sign in instead"
     }
   }

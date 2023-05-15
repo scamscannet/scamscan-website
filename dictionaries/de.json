@@ -14,7 +14,7 @@
     "navbar":{
       "home": "Home",
       "tools": "Tools",	
-      "about": "About",
+      "about": "Über uns",
       "contact": "Contact",
       "account": "Account",
       "login": "Einloggen",
@@ -24,5 +24,22 @@
     "tools":{
       "title": "Werkzeuge",
       "subtitle": "We offer a variety of tools to protect you from fraud."
+    },
+    "login":{
+      "signIn": "Einloggen",
+      "infoText": "Benutze deine Email und dein Passwort um dich einzuloggen."
+    },
+    "register":{
+      "signUp": "Registrieren",
+      "infoText": "Benutze deine Email und dein Passwort um dich zu registrieren."
+    }, 
+    "formLogin": {
+      "email": "Email",
+      "password": "Passwort",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Noch keinen Account?",
+      "alreadyAccount": "Bereits einen Account?",
+      "registerForFree": "Registriere dich jetzt kostenlos!",
+      "signInInstead": "Stattdessen einloggen!"
     }
   }
