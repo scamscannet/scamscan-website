@@ -138,6 +138,14 @@ export default function Form({
           </Link>{" "}
         </p>
       )}
+      <button
+        className={`${"border-black bg-black text-white hover:bg-white hover:text-black"} flex h-10 w-full items-center justify-center rounded-md border text-sm transition-all focus:outline-none`}
+        onClick={() => {
+          signIn("github");
+        }}
+      >
+        Github
+      </button>
     </form>
   );
 }
