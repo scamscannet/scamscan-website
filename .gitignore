@@ -37,3 +37,4 @@ next-env.d.ts
 
 migration_lock.toml
 .npmrc
+prisma/**/migrations/
