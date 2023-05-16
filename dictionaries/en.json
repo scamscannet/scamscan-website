@@ -39,7 +39,10 @@
       "forgotPassword": "Forgot password?",
       "noAccount": "Don't have an account?",
       "alreadyAccount": "Already have an account?",
-      "registerForFree": "Register for free!",
-      "signInInstead": "Sign in instead"
+      "registerForFree": "Sign up for free!",
+      "signInInstead": "Sign in instead",
+      "signIn": "Sign in",
+      "signUp": "Sign up",
+      "statusCreated": "Account created! Redirecting to login..."
     }
   }
