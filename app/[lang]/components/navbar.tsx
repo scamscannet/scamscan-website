@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { Locale } from "@/i18n-config";
 import LocaleSwitcher from "./locale-switcher";
+import { usePathname } from "next/navigation";
 
 export default function Navbar({
   dictionary,
@@ -22,6 +23,9 @@ export default function Navbar({
   lang: Locale;
 }) {
   const { data: session } = useSession();
+  const pathname = usePathname();
+  // pathname mit regex, um den ländercode zu entfernen
+  console.log("pathname", pathname?.split(/^\/[a-zA-Z][a-zA-Z]\/|^\/[a-zA-Z][a-zA-Z]/)[1]);
   return (
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
@@ -35,13 +39,12 @@ export default function Navbar({
           <div className="flex items-center lg:order-2">
             <LocaleSwitcher currentLocale={lang} />
             {session ? (
-              <Link
-                href={lang + "/logout"}
+              <button
+                onClick={() => signOut()}
                 className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-                locale={lang}
               >
                 {dictionary.logout}
-              </Link>
+              </button>
             ) : (
               <Link
                 href={lang + "/login"}
