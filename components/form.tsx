@@ -7,7 +7,26 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function Form({ type }: { type: "login" | "register" }) {
+export default function Form({
+  type,
+  lang,
+  dictionary,
+}: {
+  type: "login" | "register";
+  lang: string;
+  dictionary: {
+    email: string;
+    password: string;
+    forgotPassword: string;
+    noAccount: string;
+    alreadyAccount: string;
+    registerForFree: string;
+    signInInstead: string;
+    signUp: string;
+    signIn: string;
+    statusCreated: string;
+  };
+}) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -25,7 +44,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
           }).then(({ ok, error }) => {
             setLoading(false);
             if (ok) {
-              router.push("/protected");
+              router.push("#");
             } else {
               toast.error(error);
             }
@@ -43,7 +62,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
           }).then(async (res) => {
             setLoading(false);
             if (res.status === 200) {
-              toast.success("Account created! Redirecting to login...");
+              toast.success(dictionary.statusCreated);
               setTimeout(() => {
                 router.push("/login");
               }, 2000);
@@ -60,7 +79,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
           htmlFor="email"
           className="block text-xs text-gray-600 uppercase"
         >
-          Email Address
+          {dictionary.email}
         </label>
         <input
           id="email"
@@ -77,7 +96,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
           htmlFor="password"
           className="block text-xs text-gray-600 uppercase"
         >
-          Password
+          {dictionary.password}
         </label>
         <input
           id="password"
@@ -98,24 +117,25 @@ export default function Form({ type }: { type: "login" | "register" }) {
         {loading ? (
           <LoadingDots color="#808080" />
         ) : (
-          <p>{type === "login" ? "Sign In" : "Sign Up"}</p>
+          <p>{type === "login" ? dictionary.signIn : dictionary.signUp}</p>
         )}
       </button>
       {type === "login" ? (
         <p className="text-center text-sm text-gray-600">
-          Don&apos;t have an account?{" "}
-          <Link href="/register" className="font-semibold text-gray-800">
-            Sign up
+          {dictionary.noAccount}{" "}
+          <Link
+            href={lang + "/register"}
+            className="font-semibold text-gray-800"
+          >
+            {dictionary.registerForFree}
           </Link>{" "}
-          for free.
         </p>
       ) : (
         <p className="text-center text-sm text-gray-600">
-          Already have an account?{" "}
-          <Link href="/login" className="font-semibold text-gray-800">
-            Sign in
+          {dictionary.alreadyAccount}{" "}
+          <Link href={lang + "/login"} className="font-semibold text-gray-800">
+            {dictionary.signInInstead}
           </Link>{" "}
-          instead.
         </p>
       )}
     </form>

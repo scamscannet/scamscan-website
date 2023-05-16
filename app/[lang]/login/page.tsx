@@ -31,7 +31,7 @@ export default async function Login({
           </p>
         </div>
         {/* <Form type="login" dictionary={dictionary["formLogin"]} lang={lang} /> */}
-        <Form type="login"/>
+        <Form type="login" lang={lang} dictionary={dictionary["formLogin"]} />
       </div>
     </div>
   );
