@@ -1,48 +1,49 @@
 {
-    "server-component": {
-      "welcome": "Willkommen"
-    },
-    "counter": {
-      "increment": "Zuwachs",
-      "decrement": "Dekrementieren"
-    },
-    "blacklist":{
-      "checkDomain": "Überprüfe Domain",
-      "infoBoxTitle": "Über die ScamScan Domain Blacklist",
-      "infoBoxText": "Bla langer Text"
-    },
-    "navbar":{
-      "home": "Home",
-      "tools": "Tools",	
-      "about": "Über uns",
-      "contact": "Contact",
-      "account": "Account",
-      "login": "Einloggen",
-      "logout": "Ausloggen",
-      "pricing": "Preise"
-    },
-    "tools":{
-      "title": "Werkzeuge",
-      "subtitle": "We offer a variety of tools to protect you from fraud."
-    },
-    "login":{
-      "signIn": "Einloggen",
-      "infoText": "Benutze deine Email und dein Passwort um dich einzuloggen."
-    },
-    "register":{
-      "signUp": "Registrieren",
-      "infoText": "Benutze deine Email und dein Passwort um dich zu registrieren."
-    }, 
-    "formLogin": {
-      "email": "Email",
-      "password": "Passwort",
-      "forgotPassword": "Passwort vergessen?",
-      "noAccount": "Noch keinen Account?",
-      "alreadyAccount": "Bereits einen Account?",
-      "registerForFree": "Registriere dich jetzt kostenlos!",
-      "signInInstead": "Stattdessen einloggen!",
-      "signIn": "Einloggen",
-      "signUp": "Registrieren",
-      "statusCreated": "Account erfolgreich erstellt! Sie werden in Kürze weitergeleitet."
-    }
-  }
+  "server-component": {
+    "welcome": "Willkommen"
+  },
+  "counter": {
+    "increment": "Zuwachs",
+    "decrement": "Dekrementieren"
+  },
+  "blacklist": {
+    "checkDomain": "Überprüfe Domain",
+    "infoBoxTitle": "Über die ScamScan Domain Blacklist",
+    "infoBoxText": "Bla langer Text"
+  },
+  "navbar": {
+    "home": "Home",
+    "tools": "Tools",
+    "about": "Über uns",
+    "contact": "Contact",
+    "account": "Account",
+    "login": "Einloggen",
+    "logout": "Ausloggen",
+    "pricing": "Preise"
+  },
+  "tools": {
+    "title": "Werkzeuge",
+    "subtitle": "We offer a variety of tools to protect you from fraud."
+  },
+  "login": {
+    "signIn": "Einloggen",
+    "infoText": "Benutze deine Email und dein Passwort um dich einzuloggen."
+  },
+  "register": {
+    "signUp": "Registrieren",
+    "infoText": "Benutze deine Email und dein Passwort um dich zu registrieren."
+  },
+  "formLogin": {
+    "email": "Email",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch keinen Account?",
+    "alreadyAccount": "Bereits einen Account?",
+    "registerForFree": "Registriere dich jetzt kostenlos!",
+    "signInInstead": "Stattdessen einloggen!",
+    "signIn": "Einloggen",
+    "signUp": "Registrieren",
+    "statusCreated": "Account erfolgreich erstellt! Sie werden in Kürze weitergeleitet."
+  },
+  "statusCreated": "Email erfolgreich verifiziert! Sie werden in Kürze weitergeleitet."
+}

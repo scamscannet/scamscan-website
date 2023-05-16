@@ -26,6 +26,9 @@ export default NextAuth({
         if (!user || !user.password || !(await compare(password, user.password))) {
           throw new Error("Invalid username or password");
         }
+        if(!user.emailVerified) {
+          throw new Error("Email not verified");
+        }
         return user;
       },
     }),

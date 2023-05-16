@@ -1,48 +1,49 @@
 {
-    "server-component": {
-      "welcome": "Welcome"
-    },
-    "counter": {
-      "increment": "Increment",
-      "decrement": "Decrement"
-    },
-    "blacklist":{
-      "checkDomain": "Check Domain",
-      "infoBoxTitle": "About the ScamScan Doman Blacklist",
-      "infoBoxText": "The ScamScan Domain Blacklist contains all known fraudulent domains/websites. In addition, we have trained an AI model based on our data that can predict whether a domain name appears to be fraudulent or not. Unfortunately, the blacklist is limited to subdomains so far. We are already working on an extension. Our blacklist is already successfully used in the Keplr cryptocurrency wallet to protect users from fraud. If you would like to integrate the blacklist, you can contact us at any time."
-    },
-    "navbar":{
-      "home": "Home",
-      "tools": "Tools",	
-      "about": "About",
-      "contact": "Contact",
-      "account": "Account",
-      "login": "Log in",
-      "pricing": "Pricing",
-      "logout": "Log out"
-    },
-    "tools":{
-      "title": "Tools",
-      "subtitle": "We offer a variety of tools to protect you from fraud."
-    },
-    "login":{
-      "signIn": "Sign in",
-      "infoText": "Use your email and password to sign in"
-    },
-    "register":{
-      "signUp": "Sign up",
-      "infoText": "Use your email and password to sign up"
-    },
-    "formLogin": {
-      "email": "Email",
-      "password": "Password",
-      "forgotPassword": "Forgot password?",
-      "noAccount": "Don't have an account?",
-      "alreadyAccount": "Already have an account?",
-      "registerForFree": "Sign up for free!",
-      "signInInstead": "Sign in instead",
-      "signIn": "Sign in",
-      "signUp": "Sign up",
-      "statusCreated": "Account created! Redirecting to login..."
-    }
-  }
+  "server-component": {
+    "welcome": "Welcome"
+  },
+  "counter": {
+    "increment": "Increment",
+    "decrement": "Decrement"
+  },
+  "blacklist": {
+    "checkDomain": "Check Domain",
+    "infoBoxTitle": "About the ScamScan Doman Blacklist",
+    "infoBoxText": "The ScamScan Domain Blacklist contains all known fraudulent domains/websites. In addition, we have trained an AI model based on our data that can predict whether a domain name appears to be fraudulent or not. Unfortunately, the blacklist is limited to subdomains so far. We are already working on an extension. Our blacklist is already successfully used in the Keplr cryptocurrency wallet to protect users from fraud. If you would like to integrate the blacklist, you can contact us at any time."
+  },
+  "navbar": {
+    "home": "Home",
+    "tools": "Tools",
+    "about": "About",
+    "contact": "Contact",
+    "account": "Account",
+    "login": "Log in",
+    "pricing": "Pricing",
+    "logout": "Log out"
+  },
+  "tools": {
+    "title": "Tools",
+    "subtitle": "We offer a variety of tools to protect you from fraud."
+  },
+  "login": {
+    "signIn": "Sign in",
+    "infoText": "Use your email and password to sign in"
+  },
+  "register": {
+    "signUp": "Sign up",
+    "infoText": "Use your email and password to sign up"
+  },
+  "formLogin": {
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "alreadyAccount": "Already have an account?",
+    "registerForFree": "Sign up for free!",
+    "signInInstead": "Sign in instead",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "statusCreated": "Account created! Redirecting to login..."
+  },
+  "statusCreated": "Email address successfully verified! Redirecting to login..."
+}
