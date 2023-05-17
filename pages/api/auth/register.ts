@@ -36,11 +36,12 @@ export default async function handler(
         emailVerifyToken: token,
       },
     });
+    const domain = process.env.NODE_ENV === "production" ? "https://scamscannet.netlify.app/" : "http://localhost:3000/";
     const info = await transporter.sendMail({
       from: "ScamScan <scamscan@interbloc.org>",
       to: email,
       subject: "Verify your email",
-      html: `<a href="http://localhost:3000/account/verify-email/${token}">Verify your email</a>`,
+      html: `<a href="${domain}account/verify-email/${token}">Verify your email</a>`,
     });
     res.status(200).json(user);
   }
