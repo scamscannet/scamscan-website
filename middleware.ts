@@ -1,9 +1,10 @@
-import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
 import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
+
+const PUBLIC_FILE = /\.(.*)$/;
 
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -20,6 +21,14 @@ function getLocale(request: NextRequest): string | undefined {
 export default async function middleware(req: NextRequest) {
   // Get the pathname of the request (e.g. /, /protected)
   const path = req.nextUrl.pathname;
+
+  if (
+    path.startsWith("/api") ||
+    path.startsWith("/_next") ||
+    PUBLIC_FILE.test(path)
+  ) {
+    return;
+  }
 
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !path.startsWith(`/${locale}/`) && path !== `/${locale}`
@@ -50,9 +59,3 @@ export default async function middleware(req: NextRequest) {
   // }
   // return NextResponse.next();
 }
-
-export const config = {
-  matcher: [
-    '/'
-  ],
-};

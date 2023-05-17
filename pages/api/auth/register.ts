@@ -5,11 +5,11 @@ import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.mailtrap.io",
-  port: 2525,
+  host: process.env.NODEMAILER_HOST,
+  port: Number(process.env.NODEMAILER_PORT),
   auth: {
-    user: process.env.MAILTRAP_USER,
-    pass: process.env.MAILTRAP_PASS,
+    user: process.env.NODEMAILER_USER,
+    pass: process.env.NODEMAILER_PASS,
   },
 });
 
@@ -37,12 +37,11 @@ export default async function handler(
       },
     });
     const info = await transporter.sendMail({
-      from: "ScamScan",
+      from: "ScamScan <scamscan@interbloc.org>",
       to: email,
       subject: "Verify your email",
-      html: `<a href="http://localhost:3000/account/verify-email?token=${token}">Verify your email</a>`,
+      html: `<a href="http://localhost:3000/account/verify-email/${token}">Verify your email</a>`,
     });
-    console.log(info);
     res.status(200).json(user);
   }
 }

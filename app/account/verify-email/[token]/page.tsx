@@ -1,3 +1,4 @@
+"use client";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 import { useParams, useRouter } from "next/navigation";
@@ -9,10 +10,10 @@ export default async function VerifyEmail({
   params: { lang: Locale };
 }) {
   const router = useRouter();
-  const dictionary = await getDictionary(lang);
-  const token = useParams()?.token || "";
-  const verifyStatus = fetch("/api/auth/verify-email", {
-    method: "GET",
+  // const dictionary = await getDictionary(lang);
+  const token = useParams()?.token;
+  const verifyStatus = fetch("/api/account/verify-email", {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
@@ -21,7 +22,7 @@ export default async function VerifyEmail({
     }),
   }).then(async (res) => {
     if (res.status === 200) {
-      toast.success(dictionary.statusCreated);
+      toast.success("done");
       setTimeout(() => {
         router.push("/login");
       }, 1000);
@@ -31,8 +32,5 @@ export default async function VerifyEmail({
     }
   });
 
-  return (
-    <div>
-    </div>
-  );
+  return <div></div>;
 }

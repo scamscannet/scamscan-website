@@ -25,7 +25,7 @@ export default function Navbar({
   const { data: session } = useSession();
   const pathname = usePathname();
   // pathname mit regex, um den ländercode zu entfernen
-  console.log("pathname", pathname?.split(/^\/[a-zA-Z][a-zA-Z]\/|^\/[a-zA-Z][a-zA-Z]/)[1]);
+  // console.log("pathname", pathname?.split(/^\/[a-zA-Z][a-zA-Z]\/|^\/[a-zA-Z][a-zA-Z]/)[1]);
   return (
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">

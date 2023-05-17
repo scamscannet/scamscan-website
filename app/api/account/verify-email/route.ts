@@ -2,14 +2,20 @@ import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import prisma from "@/lib/prisma";
 
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const token = searchParams.get("token");
+type jwtPayload = {
+  email: string;
+  iat: number;
+  exp: number;
+};
+
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  const { token } = body;
   if (!token) {
     return NextResponse.json({ error: "Invalid token" }, { status: 400 });
   }
   const isValid = await new Promise((resolve) => {
-    jwt.verify(token, process.env.JWT_KEY!, (err) => {
+    jwt.verify(token, process.env.JWT_KEY!, (err: any) => {
       if (err) {
         resolve(false);
       } else {
@@ -20,10 +26,16 @@ export async function GET(req: NextRequest) {
   if (!isValid) {
     return NextResponse.json({ error: "Invalid token" }, { status: 400 });
   }
-  const email = jwt.decode(token) as string;
+  jwt.verify(token, process.env.JWT_KEY!, (err: any) => {
+    if (err) {
+      return NextResponse.json({ error: "Invalid token" }, { status: 400 });
+    }
+  });
+  const jwtDecoded = jwt.decode(token) as jwtPayload;
+  const email = jwtDecoded.email;
   const user = await prisma.user.findUnique({
     where: {
-      email,
+      email
     },
   });
   if (!user) {

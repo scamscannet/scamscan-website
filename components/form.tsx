@@ -28,6 +28,7 @@ export default function Form({
   };
 }) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   return (
@@ -42,10 +43,12 @@ export default function Form({
             password: e.currentTarget.password.value,
             // @ts-ignore
           }).then(({ ok, error }) => {
+            console.log(ok, error);
             setLoading(false);
             if (ok) {
               router.push("#");
             } else {
+              setError(error);
               toast.error(error);
             }
           });
@@ -120,6 +123,9 @@ export default function Form({
           <p>{type === "login" ? dictionary.signIn : dictionary.signUp}</p>
         )}
       </button>
+      {error !== "" && (
+        <p className="text-center text-sm text-red-600">{error}</p>
+      )}
       {type === "login" ? (
         <p className="text-center text-sm text-gray-600">
           {dictionary.noAccount}{" "}
