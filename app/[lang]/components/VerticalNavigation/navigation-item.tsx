@@ -9,7 +9,7 @@ interface NavigationItemProps {
 }
 
 export default function NavigationItem(props: NavigationItemProps){
-    const { pathname } = usePathname();
+    const pathname = usePathname();
 
     return (
         <div className={`navigation-list-item ${pathname === props.href ? 'is-active' : ''}`}>
