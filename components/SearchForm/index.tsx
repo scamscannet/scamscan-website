@@ -1,10 +1,10 @@
-import Input from "@/ui/components/Input";
+import {DebounceInput} from "react-debounce-input";
 
 export default function SearchForm({}) {
     let value = "";
-
-    const handleChange = (e) => {
-
+    let size = undefined;
+    function handleChange(){
+        console.log("Banana")
     }
 
     const handleFocus = () => {
@@ -17,16 +17,19 @@ export default function SearchForm({}) {
 
     return (
         <form>
-            <Input
-                value={value}
-                placeholder="Enter a domain.tld"
-                readonly={false}
-                search
-                onChange={handleChange}
-                onFocus={handleFocus}
-                inputRef={null}>
+            <label className="form-control-container" id="search-input-label">
+                <div className="form-control-icon"></div>
+                <input
+                    id="search-input"
+                    minLength={2}
+                    className={`form-control form-control-full ${!!size ? 'form-control-' + size : ''}`}
+                    placeholder="Please enter the domain youw ant to check"
+                    value={value}
+                    onFocus={handleFocus}
+                    onChange={handleChange}
+                />
+            </label>
 
-            </Input>
         </form>
     )
 }

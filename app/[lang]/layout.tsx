@@ -9,28 +9,28 @@ import AuthContext from "./AuthContext";
 import { getDictionary } from "@/get-dictionary";
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
+import {ReactNode} from "react";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function Root({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { lang: Locale };
-}) {
-  const dictionary = await getDictionary(params.lang);
+type LayoutProps = {
+    children: ReactNode;
+    params: { lang: Locale }
+};
+
+export default async function Root(props: LayoutProps) {
+  const dictionary = await getDictionary(props.params.lang);
   return (
-    <html lang={params.lang}>
+    <html lang={props.params.lang}>
       <head>
         <title>ScamScan</title>
       </head>
       <AuthContext>
         <body>
         <Layout>
-            {children}
+            {props.children}
         </Layout>
         </body>
       </AuthContext>
