@@ -1,0 +1,36 @@
+.wrapper{
+  &-layout{
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+    &-sidebar{
+      width: 145px;
+      position: relative;
+      z-index: 10;
+
+      @include d($md){
+        position: fixed;
+        width: 32px;
+        top: 0;
+        left: 0;
+      }
+      @include d($sm){
+        width: 24px;
+      }
+    }
+    &-body{
+      flex: 1;
+      padding: 32px 48px 80px 32px;
+      position: relative;
+      width: 100%;
+
+      @include d($md){
+        padding: 95px 32px 32px;
+      }
+
+      @include d($sm){
+        padding: 90px 24px 32px;
+      }
+    }
+  }
+}

@@ -11,13 +11,6 @@ export default async function IndexPage({
   const dictionary = await getDictionary(lang);
   return (
     <div>
-      <p>Current locale: {lang}</p>
-      <p>
-        This text is rendered on the server:{" "}
-        {dictionary["server-component"].welcome}
-      </p>
-      <LoggedIn />
-      <ReportWebsite />
     </div>
   );
 }

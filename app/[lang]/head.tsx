@@ -6,7 +6,7 @@ export default function Head() {
           name="description"
           content="How to do i18n in Next.js 13 within app directory"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon/favicon.ico" />
       </>
     )
   }

@@ -1,9 +1,14 @@
 // These styles apply to every route in the application
 import { Locale, i18n } from "@/i18n-config";
+
+/* Stylesheets */
 import "../globals.css";
+import "../../styles/local.scss"
+/* Components */
 import AuthContext from "./AuthContext";
-import Navbar from "./components/navbar";
 import { getDictionary } from "@/get-dictionary";
+import Layout from "@/components/Layout";
+import Header from "@/components/Header";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -24,8 +29,9 @@ export default async function Root({
       </head>
       <AuthContext>
         <body>
-          <Navbar dictionary={dictionary.navbar} lang={params.lang} />
-          {children}
+        <Layout>
+            {children}
+        </Layout>
         </body>
       </AuthContext>
     </html>
