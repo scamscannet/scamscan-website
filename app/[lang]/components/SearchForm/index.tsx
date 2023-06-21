@@ -4,7 +4,7 @@ export default function SearchForm({}) {
     let value = "";
     let size = undefined;
     function handleChange(){
-        console.log("Banana")
+
     }
 
     const handleFocus = () => {
@@ -23,7 +23,7 @@ export default function SearchForm({}) {
                     id="search-input"
                     minLength={2}
                     className={`form-control form-control-full ${!!size ? 'form-control-' + size : ''}`}
-                    placeholder="Please enter the domain youw ant to check"
+                    placeholder="Please enter the domain you want to check"
                     value={value}
                     onFocus={handleFocus}
                     onChange={handleChange}

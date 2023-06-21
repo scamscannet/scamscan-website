@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import SearchForm from "@/components/SearchForm";
+import SearchForm from "@/app/[lang]/components/SearchForm";
 
 export default function Header() {
 

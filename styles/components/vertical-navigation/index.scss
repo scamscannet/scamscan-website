@@ -1,0 +1,16 @@
+
+.navigation {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 20px 20px 0;
+  border: 1px var(--color-grey-100) solid;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 32px 32px 57px;
+  position: sticky;
+  background-color: var(--color-black-100);
+  margin-left: -1px;
+  transition: width var(--duration) var(--ease);
+}

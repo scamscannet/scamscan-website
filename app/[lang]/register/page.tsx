@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Form from "@/components/form";
+import Form from "@/app/[lang]/components/form";
 import Link from "next/link";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
