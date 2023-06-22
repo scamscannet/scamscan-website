@@ -19,4 +19,16 @@
     &-4{
       background: linear-gradient(55.7deg, #1E1F1F 53.09%, #2F3868 154.42%);
     }  }
+
+  &-header {
+
+    &-title {
+      font-weight: bold;
+      font-size: x-large;
+    }
+  }
+
+  &-body {
+    margin-top: 24px;
+  }
 }
